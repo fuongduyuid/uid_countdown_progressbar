@@ -40,10 +40,19 @@ const MileStone = ({ date, percentage, text, data }) => {
 const Timeline = ({ data, progress }) => {
   return (
     <div className="timeline">
-      <div className="timeline-progress" style={{ width: `${progress || 0}%` }}>
-        <span style={{ left: `${progress || 0}%`, position: "absolute" }}>{`${
-          progress || 0
-        }%`}</span>
+      <div
+        className="timeline-progress"
+        style={{ width: `${progress || 0}%` }}
+      ></div>
+      <div
+        className="text-wrapper"
+        style={{
+          position: "relative",
+          textAlign: "left",
+          left: "100%",
+        }}
+      >
+        {`${progress || 0}%`}
       </div>
       <div className="timeline-items">
         {map(mileStones, ({ date, percentage, text }) => (
