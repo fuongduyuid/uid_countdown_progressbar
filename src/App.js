@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider } from "react-redux";
 
+import "react-toastify/dist/ReactToastify.min.css";
+import store from "./Redux";
+import "./App.css";
+import ProgressContainer from "./Containers/Progress.container";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Provider store={store}>
+        <h3 className="heading">UID - Trendy Project Countdown</h3>
+        <ProgressContainer />
+      </Provider>
     </div>
   );
 }
